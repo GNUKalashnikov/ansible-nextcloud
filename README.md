@@ -20,4 +20,8 @@ This also means dependencies have to be added and downloaded via ansible; which 
         - Would also regardless create nextcloud user and password (Can also be created manually via the ui)
 - [] Create in ansible a location/folder where the data will be used
     - Defining `-v nextcloud:/var/www/html`
-- 
+
+## Current Whereabout
+`docker run -itd -p 8080:80 -v $(pwd)/nextcloud:/var/www/html nextcloud`
+
+And find out how to link a local sql table to the container 
