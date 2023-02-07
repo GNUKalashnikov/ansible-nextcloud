@@ -25,3 +25,10 @@ This also means dependencies have to be added and downloaded via ansible; which 
 `docker run -itd -p 8080:80 -v $(pwd)/nextcloud:/var/www/html nextcloud`
 
 And find out how to link a local sql table to the container 
+
+```bash
+systemctl stop mariadb
+rm -R /var/lib/mysql/*
+mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+systemctl start mariadb
+```
