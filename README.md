@@ -12,7 +12,7 @@ docker-compose up -d --pull
 
 ## Checklist
 
-When Running the dockerfile we need to make sure it's resources are linked to a permenant database and it writes to a permenant location externally of it's own container.
+When Running the dockerfile we need to make sure it's resources are linked to a permanent database and it writes to a permanent location externally of it's own container.
 This also means dependencies have to be added and downloaded via ansible; which are:
 
 - [ ] mysql (As the database of choice)

@@ -22,8 +22,8 @@ services:
     restart: always
     ports:
       - 8080:80
-    # links:
-    #   - db
+    links:
+      - db
     volumes:
       - nextcloud:/var/www/html
     environment:
