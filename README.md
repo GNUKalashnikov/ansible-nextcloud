@@ -24,7 +24,8 @@ This also means dependencies have to be added and downloaded via ansible; which 
 ## Current Whereabout
 `docker run -itd -p 8080:80 -v $(pwd)/nextcloud:/var/www/html nextcloud`
 
-And find out how to link a local sql table to the container 
+- Local Connections
+  - `host.docker.internal:172.17.0.1`
 
 ```bash
 systemctl stop mariadb
