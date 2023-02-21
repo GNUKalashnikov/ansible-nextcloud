@@ -10,12 +10,12 @@ services:
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - /Users/ivan.kalashnikov/Documents/Programming/personal/ansible-nextcloud/db:/var/lib/mysql
+      - ${STORAGE_LOCATION}/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud-admin
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
   app:
     image: nextcloud:stable
     restart: always
@@ -24,17 +24,15 @@ services:
     links:
       - db
     volumes:
-      - /Users/ivan.kalashnikov/Documents/Programming/personal/ansible-nextcloud/nextcloud:/var/www/html
+      - ${STORAGE_LOCATION}/nextcloud:/var/www/html
     environment:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud-admin
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
       - MYSQL_HOST=db
       - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
       - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
-      # - NEXTCLOUD_TRUSTED_DOMAINS=
-      # - OVERWRITEPROTOCOL=https
-      # - CLIENT_MAX_BODY_SIZE=400G
-      # - UPLOAD_MAX_FILESIZE=400G
-
-
+      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAINS}
+      - OVERWRITEPROTOCOL=${OVERWRITEPROTOCOL}
+      - CLIENT_MAX_BODY_SIZE=${CLIENT_MAX_BODY_SIZE}
+      - UPLOAD_MAX_FILESIZE=${UPLOAD_MAX_FILESIZE}
