@@ -18,7 +18,7 @@ This also means dependencies have to be added and downloaded via ansible; which 
 - [ ] mysql (As the database of choice)
     - Would be nice to have it pre established before this script in a manner of best practice such as an automated creation of a user and password
         - Would also regardless create nextcloud user and password (Can also be created manually via the ui)
-- [ ] Create in ansible a location/folder where the data will be used
+- [x] Create in ansible a location/folder where the data will be used
     - Defining `-v nextcloud:/var/www/html`
 
 ## Current Whereabout
