@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 volumes:
   nextcloud:
@@ -23,6 +23,7 @@ services:
       - 8080:80
     links:
       - db
+    command: bash -c "echo '*/5 * * * * php -f /var/www/html/cron.php' > /etc/crontabs/www-data && crond -f"
     volumes:
       - ${STORAGE_LOCATION}/nextcloud:/var/www/html
     environment:
@@ -35,4 +36,4 @@ services:
       - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAINS}
       - OVERWRITEPROTOCOL=${OVERWRITEPROTOCOL}
       - CLIENT_MAX_BODY_SIZE=${CLIENT_MAX_BODY_SIZE}
-      - UPLOAD_MAX_FILESIZE=${UPLOAD_MAX_FILESIZE}
+      - UPLOAD_MAX_FILESIZE=${UPLOAD_MAX_FILESIZ
