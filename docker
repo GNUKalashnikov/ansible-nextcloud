@@ -1,5 +1,5 @@
 server {
-    server_name cloud.kalashnikov.uk;
+    server_name disk.kalashnikov.uk;
 
     location / {
         proxy_pass http://127.0.0.1:8080;
