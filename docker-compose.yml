@@ -24,6 +24,7 @@ services:
     links:
       - db
     command: bash -c "echo '*/5 * * * * php -f /var/www/html/cron.php' > /etc/crontabs/www-data && crond -f"
+    # app_1  | bash: line 1: /etc/crontabs/www-data: No such file or directory
     volumes:
       - ${STORAGE_LOCATION}/nextcloud:/var/www/html
     environment:
