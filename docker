@@ -10,15 +10,3 @@ server {
     client_max_body_size 10G;
     client_body_buffer_size 400M;
 }
-server {
-    if ($host = cloud.kalashnikov.uk) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    listen 80;
-    server_name cloud.kalashnikov.uk;
-    return 404; # managed by Certbot
-
-
-}
