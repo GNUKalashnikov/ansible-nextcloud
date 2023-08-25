@@ -10,4 +10,4 @@ RUN apt-get update; apt-get install cron vim -y
 RUN chmod +x cronjob.sh
 
 # Define the command to run your script
-RUN ./cronjob.sh
+#RUN ./cronjob.sh
