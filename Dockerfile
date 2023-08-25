@@ -10,7 +10,7 @@ WORKDIR /var/www/html
 RUN apt-get update && apt-get install cron vim -y
 
 # Make the script executable
-RUN chmod +x cronjob.sh
+RUN chmod +x /var/www/html/cronjob.sh
 
 # Define the command to run your script
-CMD ["./cronjob.sh"]
+CMD ["/var/www/html/cronjob.sh"]
