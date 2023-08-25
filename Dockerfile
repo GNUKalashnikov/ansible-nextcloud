@@ -1,6 +1,6 @@
 FROM nextcloud:latest
 
-COPY .cronjob.sh /var/www/html
+COPY . /var/www/html
 
 # Set the working directory
 WORKDIR /var/www/html
