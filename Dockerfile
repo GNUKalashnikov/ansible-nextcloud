@@ -1,6 +1,7 @@
 FROM nextcloud:latest
 
-COPY . /var/www/html
+# Copy the script into the image
+COPY cronjob.sh /var/www/html/
 
 # Set the working directory
 WORKDIR /var/www/html
