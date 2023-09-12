@@ -33,3 +33,19 @@ rm -R /var/lib/mysql/*
 mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl start mariadb
 ```
+
+## Troubleshooting
+
+Found that when deploying to an external mounted drive (*anything other than / drive*) it will cause a permission error.
+- `chown -R www-data:www-data designated-mounted-folder`
+- `chmod -R 0750 designated-mounted-folder`
+
+## Current Problems
+- Need to deploy twice from a clean install as it takes time as the nextcloud container hangs on the "trying to reinstall"
+Possible soloutions include:
+- Leave it and just dealing with ssh'ing into the host machine and pulling down the container and redeploying.
+- Creating a pause for either of the containers
+
+The cron is unable does not activate.
+- troubleshoot the local imagine till it works and push the changes here.
+

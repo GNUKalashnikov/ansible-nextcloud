@@ -11,21 +11,21 @@ server {
     client_body_buffer_size 400M;
 
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/disk.kalashnikov.uk/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/disk.kalashnikov.uk/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl; 
+    ssl_certificate /etc/letsencrypt/live/disk.kalashnikov.uk/fullchain.pem; 
+    ssl_certificate_key /etc/letsencrypt/live/disk.kalashnikov.uk/privkey.pem; 
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 }server {
     if ($host = disk.kalashnikov.uk) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
     server_name disk.kalashnikov.uk;
     listen 80;
-    return 404; # managed by Certbot
+    return 404; 
 
 
 }
