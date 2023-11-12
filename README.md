@@ -8,7 +8,7 @@ A Repo that will have a way to deploy a generic nextcloud instance
 `docker run -i -t ubuntu /bin/bash`
 
 *Updating the docker file within docker compose*
-docker-compose up -d --pull
+`docker-compose up -d --pull`
 
 ## Checklist
 
