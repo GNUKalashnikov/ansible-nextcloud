@@ -10,4 +10,4 @@ RUN apt-get update; apt-get install cron vim sudo -y
 
 # Cron Alternative
 RUN crontab -l | { cat; echo "*/5 * * * * php -f /var/www/html/cron.php"; } | crontab -
-CMD cron 
+RUN cron 
