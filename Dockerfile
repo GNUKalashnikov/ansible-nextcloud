@@ -10,6 +10,6 @@ RUN apt-get install sudo -y
 #RUN ./cronjob.sh
 
 # Cron Alternative
-RUN crontab -l | { cat; echo "*/1 * * * * sudo -u data-www php memory_limit=-1 -f /var/www/html/cron.php"; } | crontab -
+RUN crontab -u root -l | { cat; echo "*/1 * * * * sudo -u data-www php memory_limit=-1 -f /var/www/html/cron.php"; } | crontab -u root -
 CMD service cron start
 
