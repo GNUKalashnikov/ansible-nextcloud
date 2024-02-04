@@ -5,7 +5,6 @@ volumes:
   db:
 
 services:
-
   db:
     image: mariadb:latest
     restart: always
