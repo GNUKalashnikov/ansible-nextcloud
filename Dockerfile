@@ -11,5 +11,5 @@ RUN ./cronjob.sh
 
 # Cron Alternative
 #RUN crontab -u root -l | { cat; echo "*/1 * * * * sudo -u www-data php memory_limit=-1 -f /var/www/html/cron.php"; } | crontab -u root -
-RUN service cron start
+#RUN service cron start
 
